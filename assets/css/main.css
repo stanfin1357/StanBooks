@@ -12,40 +12,46 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito",  sans-serif;
-  --nav-font: "Inter",  sans-serif;
+  --default-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --heading-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --nav-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --nav-font: ;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #1B4D3E; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #50C878; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #7cae31; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #7cae31; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #212529;  /* The default color of the main navmenu links */
-  --nav-hover-color: #50C878; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #212529; /* The default color of the main navmenu links */
+  --nav-hover-color: #7cae31; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #50C878; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #7cae31; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
   --background-color: #f3f9ff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #50C878;
+  --background-color: #7cae31;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #409dfd;
@@ -66,7 +72,7 @@ body {
   font-family: var(--default-font);
 }
 
-#hero{
+#hero {
   min-height: 100vh;
   color: white;
   display: flex;
@@ -82,7 +88,7 @@ body {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(120deg, #000000, #000000);
-  opacity: .7;
+  opacity: 0.7;
 }
 
 a {
@@ -288,7 +294,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -327,11 +333,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -343,7 +349,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -446,7 +452,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -473,7 +479,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
@@ -583,7 +589,8 @@ h6 {
 
 .footer .copyright {
   padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .copyright p {
@@ -666,11 +673,11 @@ h6 {
   font-weight: 400;
 }
 
-.page-title .breadcrumbs ol li+li {
+.page-title .breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.page-title .breadcrumbs ol li+li::before {
+.page-title .breadcrumbs ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -690,7 +697,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -737,7 +743,12 @@ section,
 .hero {
   position: relative;
   padding-top: 160px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-color), transparent 95%) 50%,
+    color-mix(in srgb, var(--accent-color), transparent 98%) 25%,
+    transparent 50%
+  );
 }
 
 .hero::before {
@@ -747,7 +758,11 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--accent-color), transparent 92%), transparent 40%);
+  background: radial-gradient(
+    circle at 90% 10%,
+    color-mix(in srgb, var(--accent-color), transparent 92%),
+    transparent 40%
+  );
   pointer-events: none;
 }
 
@@ -1515,7 +1530,6 @@ section,
 }
 
 @keyframes shapes-float {
-
   0%,
   100% {
     transform: scale(0.8) rotate(45deg) translateY(0);
@@ -1803,6 +1817,26 @@ section,
   color: var(--contrast-color);
 }
 
+.pricing .pricing-card.popular:hover {
+  background: white;
+}
+
+.pricing .pricing-card.popular:hover h3,
+.pricing .pricing-card.popular:hover h4,
+.pricing .pricing-card.popular:hover p,
+.pricing .pricing-card.popular:hover .price .currency,
+.pricing .pricing-card.popular:hover .price .amount,
+.pricing .pricing-card.popular:hover .price .period,
+.pricing .pricing-card.popular:hover .features-list li,
+.pricing .pricing-card.popular:hover .features-list li i  {
+  color: black;
+}
+
+.pricing .pricing-card.popular:hover .btn-light {
+  background: #7cae31;
+  color: white;
+}
+
 .pricing .pricing-card.popular h3,
 .pricing .pricing-card.popular h4 {
   color: var(--contrast-color);
@@ -1833,7 +1867,7 @@ section,
 
 .pricing .pricing-card .popular-badge {
   position: absolute;
-  top: -12px;
+  top: -18px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--contrast-color);
@@ -1851,18 +1885,18 @@ section,
 }
 
 .pricing .pricing-card .price {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .pricing .pricing-card .price .currency {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   vertical-align: top;
   line-height: 1;
 }
 
 .pricing .pricing-card .price .amount {
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1;
 }
@@ -1911,14 +1945,20 @@ section,
   border-radius: 50px;
 }
 
+.bi .bi-check-circle-fill{
+  font-size: 8px;
+}
+
 .pricing .pricing-card .btn.btn-primary {
   background: var(--accent-color);
   border: none;
   color: var(--contrast-color);
 }
 
-.pricing .pricing-card .btn.btn-primary:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+.pricing .pricing-card .btn.btn-light:hover,
+.pricing .pricing-card .btn.btn-light:hover {
+  background: #7cae31 ;
+  color:#ffffff;
 }
 
 /*--------------------------------------------------------------
@@ -2208,7 +2248,11 @@ section,
 }
 
 .contact .contact-form .btn:hover {
-  background-color: color-mix(in srgb, var(--accent-color), var(--contrast-color) 20%);
+  background-color: color-mix(
+    in srgb,
+    var(--accent-color),
+    var(--contrast-color) 20%
+  );
 }
 
 /*--------------------------------------------------------------
@@ -2220,14 +2264,15 @@ section,
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.service-details .service-box+.service-box {
+.service-details .service-box + .service-box {
   margin-top: 30px;
 }
 
 .service-details .service-box h4 {
   font-size: 20px;
   font-weight: 700;
-  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  border-bottom: 2px solid
+    color-mix(in srgb, var(--default-color), transparent 92%);
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
@@ -2276,7 +2321,8 @@ section,
   align-items: center;
   padding: 10px 0;
   transition: 0.3s;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .service-details .download-catalog a:first-child {
@@ -2345,7 +2391,7 @@ section,
   color: var(--accent-color);
 }
 
-.navmenu ul li a{
+.navmenu ul li a {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
